@@ -1,37 +1,28 @@
-## Welcome to GitHub Pages
+### Instalation
 
-You can use the [editor on GitHub](https://github.com/sitnikovik/AJAX-Native/edit/gh-pages/index.md) to maintain and preview the content for your website in Markdown files.
+Download the package and include **Ajax.js** file to your project.
 
-Whenever you commit to this repository, GitHub Pages will run [Jekyll](https://jekyllrb.com/) to rebuild the pages in your site, from the content in your Markdown files.
+### How it works
 
-### Markdown
-
-Markdown is a lightweight and easy-to-use syntax for styling your writing. It includes conventions for
+You only have to include this code with your parametrs in your JavaSript file.
 
 ```markdown
-Syntax highlighted code block
-
-# Header 1
-## Header 2
-### Header 3
-
-- Bulleted
-- List
-
-1. Numbered
-2. List
-
-**Bold** and _Italic_ and `Code` text
-
-[Link](url) and ![Image](src)
+  `// ### Arguments
+  // 1. url = "" (your request url)
+  // 2. post = [] (POST data could be empty. Then it will be GET request. If you need POST then you should serialize form data.)
+  // 3. handle = {} (You may to handle events ahead (it's on before), always, success, error. The value of object paramets is function to do)
+  // Call response text with **var**.connection.responseText
+  let get = new Ajax(, "", {
+    ahead   : function() {
+      console.log("Start AJAX request");
+    }
+		success : function(){
+      console.log("AJAX request is done successfully");
+      console.log(get.connection.responseText);
+    }
+    error   : function() 
+      alert("Ajax request have not done!");
+      console.error(get.connection.responseText);
+    }
+	})`
 ```
-
-For more details see [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
-
-### Jekyll Themes
-
-Your Pages site will use the layout and styles from the Jekyll theme you have selected in your [repository settings](https://github.com/sitnikovik/AJAX-Native/settings/pages). The name of this theme is saved in the Jekyll `_config.yml` configuration file.
-
-### Support or Contact
-
-Having trouble with Pages? Check out our [documentation](https://docs.github.com/categories/github-pages-basics/) or [contact support](https://support.github.com/contact) and we’ll help you sort it out.
